@@ -1,19 +1,24 @@
+```css
 * {
     box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    background: #eee8ff;
     margin: 0;
+    color: #333;
 }
 
 .container {
     width: 600px;
+    max-width: 90%;
     margin: 40px auto;
     padding: 25px;
-    background: white;
+    background: #fff;
     border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px #ccc;
 }
 
 h1 {
@@ -22,12 +27,14 @@ h1 {
 
 .subtitle {
     text-align: center;
-    color: gray;
+    color: #666;
 }
 
 fieldset {
     margin-bottom: 20px;
     padding: 15px;
+    border: 1px solid #bbb;
+    background: #f8f6ff;
 }
 
 label {
@@ -41,6 +48,8 @@ textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 15px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
 }
 
 textarea {
@@ -71,7 +80,8 @@ textarea {
 
 button {
     padding: 8px 18px;
-    border: 1px solid #999;
+    border: none;
+    border-radius: 3px;
     background: #333;
     color: white;
     cursor: pointer;
@@ -85,3 +95,4 @@ button:hover {
     background: #ddd;
     color: black;
 }
+```
