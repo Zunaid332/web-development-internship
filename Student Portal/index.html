@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Registration</h1>
+        <p class="subtitle">Fill in your information below</p>
+
+        <form action="success.html" method="GET">
+
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                       placeholder="Enter your password" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="01XXXXXXXXX" required>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Academic Information</legend>
+
+                <label>Gender</label>
+
+                <div class="options" required>
+                    <label>
+                        <input type="radio" name="gender" value="male">
+                        Male
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="female">
+                        Female
+                    </label>
+                </div>
+
+
+                <label for="department">Department</label>
+
+                <select id="department" name="department">
+                    <option value="">Select Department</option>
+                    <option value="cse">Computer Science</option>
+                    <option value="eee">Electrical Engineering</option>
+                    <option value="bba">Business Administration</option>
+                </select>
+
+
+                <label>Skills</label>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="skills" value="html">
+                        HTML
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="skills" value="css">
+                        CSS
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="skills" value="javascript">
+                        JavaScript
+                    </label>
+                </div>
+
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Additional Information</legend>
+
+                <label for="website">Personal Website</label>
+                <input type="text" id="website" name="website"
+                       placeholder="abc.com">
+
+                <label for="photo">Profile Photo</label>
+                <input type="file" id="photo" name="photo">
+
+                <label for="message">About Yourself</label>
+                <textarea id="message" name="message"
+                          placeholder="Write something about yourself..."></textarea>
+
+            </fieldset>
+
+
+            <div class="terms">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the terms and conditions
+                </label>
+            </div>
+
+
+            <div class="buttons">
+                <button type="reset" class="reset">Reset</button>
+                <button type="submit">Register</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+}
+
+.container {
+    width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border: 1px solid #ccc;
+}
+
+h1 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: gray;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.options label,
+.terms label {
+    display: flex;
+    gap: 5px;
+}
+
+.options input,
+.terms input {
+    width: auto;
+    margin: 0;
+}
+
+.buttons {
+    text-align: right;
+}
+
+button {
+    padding: 8px 18px;
+    border: 1px solid #999;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+.reset {
+    background: #ddd;
+    color: black;
+}
