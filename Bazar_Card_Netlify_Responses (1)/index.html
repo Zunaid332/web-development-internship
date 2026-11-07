@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bazar Card Survey</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🛒 Bazar Card Survey</h1>
+      <p>Help us understand whether scheduled grocery delivery could be useful in Dhaka.</p>
+      <p class="small">This is a student research project. It takes about 2 minutes.</p>
+    </header>
+
+    <form id="surveyForm" name="bazar-card-survey" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="bazar-card-survey">
+      <p hidden><label>Do not fill this out: <input name="bot-field"></label></p>
+      <section>
+        <h2>About you</h2>
+
+        <label for="name">Name or initials <span class="optional">(optional)</span></label>
+        <input type="text" id="name" name="name" placeholder="Your name or initials">
+
+        <label for="occupation">What is your occupation? *</label>
+        <input type="text" id="occupation" name="occupation" placeholder="e.g. Teacher, Engineer" required>
+
+        <label for="area">Which area of Dhaka do you live in? *</label>
+        <input type="text" id="area" name="area" placeholder="e.g. Mirpur, Dhanmondi" required>
+
+        <label class="question">Do you currently work and buy groceries yourself? *</label>
+        <label class="choice"><input type="radio" name="eligible" value="Yes" required> Yes</label>
+        <label class="choice"><input type="radio" name="eligible" value="No"> No</label>
+        <p class="hint">The survey is intended for working people who buy their own groceries.</p>
+      </section>
+
+      <section>
+        <h2>Your grocery habits</h2>
+
+        <label class="question">1. How often do you buy groceries? *</label>
+        <label class="choice"><input type="radio" name="frequency" value="Daily" required> Daily</label>
+        <label class="choice"><input type="radio" name="frequency" value="Several times a week"> Several times a week</label>
+        <label class="choice"><input type="radio" name="frequency" value="Weekly"> Weekly</label>
+        <label class="choice"><input type="radio" name="frequency" value="Every two weeks"> Every two weeks</label>
+        <label class="choice"><input type="radio" name="frequency" value="Monthly"> Monthly</label>
+
+        <label class="question">2. About how much do you spend on groceries per month? *</label>
+        <label class="choice"><input type="radio" name="spending" value="Below ৳5,000" required> Below ৳5,000</label>
+        <label class="choice"><input type="radio" name="spending" value="৳5,000–৳10,000"> ৳5,000–৳10,000</label>
+        <label class="choice"><input type="radio" name="spending" value="৳10,001–৳15,000"> ৳10,001–৳15,000</label>
+        <label class="choice"><input type="radio" name="spending" value="৳15,001–৳25,000"> ৳15,001–৳25,000</label>
+        <label class="choice"><input type="radio" name="spending" value="Above ৳25,000"> Above ৳25,000</label>
+        <label class="choice"><input type="radio" name="spending" value="Not sure"> Not sure</label>
+
+        <label class="question">3. Which plan would you prefer? *</label>
+        <label class="choice"><input type="radio" name="plan" value="15-day plan" required> 15-day plan</label>
+        <label class="choice"><input type="radio" name="plan" value="30-day plan"> 30-day plan</label>
+        <label class="choice"><input type="radio" name="plan" value="Order when needed"> I prefer ordering when needed</label>
+        <label class="choice"><input type="radio" name="plan" value="Not sure"> Not sure</label>
+
+        <label class="question">4. Which items would you want included? Select all that apply. *</label>
+        <label class="choice"><input type="checkbox" name="items" value="Rice, lentils and oil"> Rice, lentils and oil</label>
+        <label class="choice"><input type="checkbox" name="items" value="Vegetables"> Vegetables</label>
+        <label class="choice"><input type="checkbox" name="items" value="Fish and meat"> Fish and meat</label>
+        <label class="choice"><input type="checkbox" name="items" value="Eggs and milk"> Eggs and milk</label>
+        <label class="choice"><input type="checkbox" name="items" value="Spices and other essentials"> Spices and other essentials</label>
+        <label class="choice"><input type="checkbox" name="items" value="Other items"> Other items</label>
+        <input type="text" id="otherItems" name="otherItems" placeholder="Other items (if any)">
+      </section>
+
+      <section>
+        <h2>Your opinion</h2>
+
+        <label class="question">5. Would you consider paying in advance for scheduled grocery delivery? *</label>
+        <label class="choice"><input type="radio" name="willingness" value="Yes" required> Yes</label>
+        <label class="choice"><input type="radio" name="willingness" value="Maybe"> Maybe</label>
+        <label class="choice"><input type="radio" name="willingness" value="No"> No</label>
+
+        <label for="why">Why do you feel this way? <span class="optional">(optional)</span></label>
+        <textarea id="why" name="why" rows="2" placeholder="A short answer is fine"></textarea>
+
+        <label class="question">6. What would be your biggest concern? *</label>
+        <label class="choice"><input type="radio" name="concern" value="Trust or advance payment" required> Trust or advance payment</label>
+        <label class="choice"><input type="radio" name="concern" value="Quality or freshness"> Quality or freshness</label>
+        <label class="choice"><input type="radio" name="concern" value="Price"> Price</label>
+        <label class="choice"><input type="radio" name="concern" value="Delivery delays"> Delivery delays</label>
+        <label class="choice"><input type="radio" name="concern" value="Incorrect quantity or weight"> Incorrect quantity or weight</label>
+        <label class="choice"><input type="radio" name="concern" value="Refunds"> Refunds</label>
+        <label class="choice"><input type="radio" name="concern" value="Other or no concern"> Other / no concern</label>
+
+        <label class="question">7. Which payment method would you prefer? *</label>
+        <label class="choice"><input type="radio" name="payment" value="bKash" required> bKash</label>
+        <label class="choice"><input type="radio" name="payment" value="Nagad"> Nagad</label>
+        <label class="choice"><input type="radio" name="payment" value="Cash on delivery"> Cash on delivery</label>
+        <label class="choice"><input type="radio" name="payment" value="Bank or card"> Bank or card</label>
+        <label class="choice"><input type="radio" name="payment" value="Other"> Other</label>
+
+        <label class="question">8. What monthly service/delivery fee would be reasonable, excluding groceries? *</label>
+        <label class="choice"><input type="radio" name="fee" value="৳0 — no separate fee" required> ৳0 — I would not pay a separate fee</label>
+        <label class="choice"><input type="radio" name="fee" value="৳1–৳99"> ৳1–৳99</label>
+        <label class="choice"><input type="radio" name="fee" value="৳100–৳199"> ৳100–৳199</label>
+        <label class="choice"><input type="radio" name="fee" value="৳200–৳299"> ৳200–৳299</label>
+        <label class="choice"><input type="radio" name="fee" value="৳300 or more"> ৳300 or more</label>
+        <label class="choice"><input type="radio" name="fee" value="Not sure"> Not sure</label>
+
+        <label for="opinion">Anything else you would like to say about Bazar Card? <span class="optional">(optional)</span></label>
+        <textarea id="opinion" name="opinion" rows="3" placeholder="Your opinion in your own words"></textarea>
+      </section>
+
+      <div class="notice">
+        <strong>Before submitting:</strong> This page saves the response as a file on the device being used. It does not send answers to the researcher automatically.
+      </div>
+      <button type="submit">Submit answers</button>
+      <p id="message" role="status" aria-live="polite"></p>
+    </form>
+
+    <footer>Student research project · Bazar Card</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
