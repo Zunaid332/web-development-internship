@@ -1,0 +1,100 @@
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.mouse {
+  width: 22px;
+  height: 34px;
+  border: 2px solid var(--teal);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.mouse-dot {
+  width: 3px;
+  height: 7px;
+  background: var(--teal);
+  border-radius: 2px;
+}
+
+.dotted-line {
+  width: 0;
+  height: 54px;
+  border-left: 2px dotted var(--teal);
+  margin: 4px 0 26px;
+  position: relative;
+}
+
+.dotted-line::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  bottom: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.section-title {
+  font-family: var(--head);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--teal);
+  line-height: 1.2;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 0;
+  height: 2px;
+  background: var(--teal);
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: calc(15% - 3px);
+  right: calc(15% - 3px);
+  bottom: -2px;
+  height: 6px;
+  background:
+    radial-gradient(circle, var(--teal) 3px, transparent 3.5px) left / 6px 6px no-repeat,
+    radial-gradient(circle, var(--teal) 3px, transparent 3.5px) right / 6px 6px no-repeat;
+}
+
+.boxed-title {
+  font-family: var(--head);
+  font-size: 34px;
+  font-weight: 400;
+  border: 2px solid var(--teal);
+  border-radius: 6px;
+  padding: 4px 26px;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 34px;
+  }
+
+  .boxed-title {
+    font-size: 28px;
+  }
+}
