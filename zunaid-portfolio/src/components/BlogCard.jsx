@@ -1,4 +1,4 @@
-import { blogAuthor, blogCover, getExcerpt, getReadTime } from '../blogs'
+import { getExcerpt, getReadTime } from '../blogs'
 
 function BlogCard({ blog }) {
   const link = '#/blog/' + blog.slug
@@ -6,7 +6,7 @@ function BlogCard({ blog }) {
   return (
     <article className="blog-card">
       <a href={link} className="blog-card-img" aria-label={blog.title}>
-        <img src={blogCover} alt="" loading="lazy" />
+        <img src={blog.cover} alt="" loading="lazy" />
       </a>
 
       <div className="blog-card-body">
@@ -14,17 +14,19 @@ function BlogCard({ blog }) {
           <a href={link}>{blog.title}</a>
         </h3>
         <p>{getExcerpt(blog)}</p>
-        <a href={link} className="read-more">
-          <span>Read More</span> &gt;&gt;
-        </a>
+        <div className="card-links">
+          <a href={link} className="read-more">
+            <span>Read More</span> &gt;&gt;
+          </a>
+          <a href={blog.files[0].href} target="_blank" rel="noreferrer" className="read-more">
+            <span>View PDF</span> &gt;&gt;
+          </a>
+        </div>
 
         <div className="blog-meta">
-          <span className="pill">{blog.tags[0]}</span>
+          <span className="pill">{blog.type}</span>
           <span>
-            <b>Text</b> {blogAuthor}
-          </span>
-          <span>
-            <b>Date</b> {blog.date}
+            <b>By</b> {blog.authors}
           </span>
           <span>
             <b>Read</b> {getReadTime(blog)}

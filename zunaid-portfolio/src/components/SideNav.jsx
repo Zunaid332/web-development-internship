@@ -6,7 +6,7 @@ const links = [
   { id: 'home', title: 'Home', icon: <FiGrid /> },
   { id: 'about', title: 'About', icon: <FiUser /> },
   { id: 'skills', title: 'Skills', icon: <FiCode /> },
-  { id: 'projects', title: 'Projects', icon: <FiMonitor /> },
+  { id: 'projects', title: 'Works', icon: <FiMonitor /> },
   { id: 'research', title: 'Research', icon: <FiEdit /> },
   { id: 'blogs', title: 'Blogs', icon: <FiBookOpen /> },
   { id: 'contact', title: 'Contact', icon: <FiMail /> },

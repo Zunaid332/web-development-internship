@@ -1,12 +1,14 @@
 :root {
-  --bg: #282c33;
-  --bg-dark: #1f2227;
-  --card: #30353d;
-  --line: #3e444d;
-  --text: #e3e7eb;
-  --muted: #a0a8b2;
-  --teal: #1fe5c4;
-  --teal-light: #a6f4e7;
+  --bg: #2b3038;
+  --bg-dark: #1c1f24;
+  --bg-darker: #181a1e;
+  --card: #2b3038;
+  --line: #3a3f47;
+  --text: #f1f3f5;
+  --muted: #b8bec6;
+  --teal: #1de9c6;
+  --teal-light: #9ef5e6;
+  --teal-pale: #8ff2df;
   --mono: 'Fira Code', monospace;
   --head: 'Ubuntu', sans-serif;
 }
@@ -47,7 +49,7 @@ button {
 
 .container {
   width: 100%;
-  max-width: 1140px;
+  max-width: 1108px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -56,11 +58,19 @@ button {
   color: var(--teal);
 }
 
+/* Contour-line background (About section) */
 .topo {
-  background-color: var(--bg);
-  background-image:
-    repeating-radial-gradient(ellipse at 15% 20%, transparent 0 22px, rgba(31, 229, 196, 0.045) 22px 23px),
-    repeating-radial-gradient(ellipse at 85% 75%, transparent 0 26px, rgba(31, 229, 196, 0.04) 26px 27px);
+  background: var(--bg-dark) url('/topo.svg') center / cover no-repeat;
+}
+
+/* Little <h1> / <p> markers around text blocks */
+.tag-mark {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--teal);
+  opacity: 0.85;
 }
 
 .btn-fill,
@@ -72,7 +82,7 @@ button {
   border-radius: 30px;
   font-family: var(--head);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   transition: 0.2s;
 }
 

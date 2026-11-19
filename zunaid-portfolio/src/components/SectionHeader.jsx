@@ -1,5 +1,7 @@
 import './SectionHeader.css'
-function SectionHeader({ title, subtitle, boxed }) {
+
+// Scroll-mouse icon with a dotted line, then an optional underlined title
+function SectionHeader({ title, subtitle }) {
   return (
     <div className="section-header">
       <div className="mouse">
@@ -7,12 +9,7 @@ function SectionHeader({ title, subtitle, boxed }) {
       </div>
       <div className="dotted-line"></div>
 
-      {boxed ? (
-        <h2 className="boxed-title">{title}</h2>
-      ) : (
-        <h2 className="section-title">{title}</h2>
-      )}
-
+      {title && <h2 className="section-title">{title}</h2>}
       {subtitle && <p className="section-subtitle">{subtitle}</p>}
     </div>
   )

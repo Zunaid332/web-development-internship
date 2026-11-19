@@ -1,7 +1,23 @@
 /* ---------- Blog list (home section + "You Might Also Like") ---------- */
 
 .blogs {
-  padding: 90px 0 110px;
+  padding: 60px 0 90px;
+  background: var(--bg);
+}
+
+/* Shows how many of the posts are currently listed */
+.blog-progress {
+  max-width: 900px;
+  height: 2px;
+  margin: -1px auto 0;
+  background: #4e545c;
+}
+
+.blog-progress span {
+  display: block;
+  height: 100%;
+  background: #c3c8ce;
+  transition: width 0.3s;
 }
 
 .blogs-subscribe {
@@ -338,5 +354,74 @@
   .also-like-title {
     font-size: 34px;
     margin-bottom: 40px;
+  }
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 26px;
+}
+
+.project-files {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 26px;
+  margin-bottom: 30px;
+}
+
+.project-files h2 {
+  font-family: var(--head);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+
+.project-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.project-file span {
+  font-family: var(--head);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.project-file-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.project-file-buttons .btn-fill,
+.project-file-buttons .btn-outline {
+  font-size: 13px;
+  padding: 6px 20px;
+}
+
+.pdf-preview {
+  display: block;
+  width: 100%;
+  height: 650px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .project-files {
+    padding: 18px;
+  }
+
+  .pdf-preview {
+    display: none;
   }
 }

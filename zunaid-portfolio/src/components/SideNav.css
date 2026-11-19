@@ -1,27 +1,27 @@
 .sidenav {
   position: fixed;
-  left: 30px;
+  left: 72px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 40;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 10px;
+  gap: 8px;
+  padding: 6px;
   background: var(--bg-dark);
-  border: 1.5px solid #eef1f4;
-  border-radius: 40px;
+  border: 1.5px solid #f1f3f5;
+  border-radius: 30px;
 }
 
 .sidenav-link {
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text);
-  font-size: 20px;
+  font-size: 16px;
   transition: color 0.2s, background 0.2s;
 }
 
@@ -30,12 +30,35 @@
 }
 
 .sidenav-link.active {
-  background: #eef1f4;
+  background: #f1f3f5;
   color: #1d2026;
 }
 
+@media (max-width: 1380px) {
+  .sidenav {
+    left: 24px;
+  }
+}
+
+/* Narrower screens: keep the side nav and push the page content right of it */
 @media (max-width: 1279px) {
   .sidenav {
+    left: 28px;
+  }
+
+  .sidenav ~ main .container {
+    padding-left: 104px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 820px) {
+  .sidenav {
     display: none;
+  }
+
+  .sidenav ~ main .container {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }

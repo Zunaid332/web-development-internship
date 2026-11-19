@@ -39,7 +39,6 @@ function Contact() {
       <div className="container">
         <SectionHeader
           title="Contact"
-          subtitle="I'm currently looking for internship opportunities"
         />
 
         <div className="contact-wrap">
@@ -76,8 +75,8 @@ function Contact() {
               Your message *
               <textarea
                 name="message"
-                rows="4"
-                placeholder="Write your message"
+                rows="1"
+                placeholder="Enter your needs"
                 value={form.message}
                 onChange={handleChange}
                 required

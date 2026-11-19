@@ -1,6 +1,6 @@
 .research {
-  padding: 90px 0;
-  background: #2b2f36;
+  padding: 60px 0 90px;
+  background: var(--bg-dark);
 }
 
 .research-list {

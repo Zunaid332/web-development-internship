@@ -2,7 +2,7 @@ import './Blogs.css'
 import { useState } from 'react'
 import { FiShare } from 'react-icons/fi'
 import BlogCard from './BlogCard'
-import { blogs, blogAuthor, blogCover, getReadTime, subscribeLink } from '../blogs'
+import { blogs, getReadTime } from '../blogs'
 
 // Turns `code` inside a paragraph into <code> elements
 function renderText(text) {
@@ -31,10 +31,10 @@ function MetaBar({ blog }) {
     <div className="post-meta-bar">
       <div className="blog-meta">
         <span>
-          <b>Text</b> {blogAuthor}
+          <b>Type</b> {blog.type}
         </span>
         <span>
-          <b>Date</b> {blog.date}
+          <b>By</b> {blog.authors}
         </span>
         <span>
           <b>Read</b> {getReadTime(blog)}
@@ -58,7 +58,7 @@ function BlogPost({ slug }) {
         <div className="container post-inner post-missing">
           <h1>Post not found</h1>
           <a href="#blogs" className="btn-outline">
-            Back to Blogs
+            Back to Projects
           </a>
         </div>
       </section>
@@ -66,6 +66,8 @@ function BlogPost({ slug }) {
   }
 
   const others = blogs.filter((b) => b.slug !== slug).slice(0, 5)
+  const firstFile = blog.files[0]
+  const showPdf = firstFile && firstFile.href.endsWith('.pdf')
 
   return (
     <>
@@ -74,7 +76,7 @@ function BlogPost({ slug }) {
           <h1>{blog.title}</h1>
           <MetaBar blog={blog} />
 
-          <img className="post-cover" src={blogCover} alt="" />
+          <img className="post-cover" src={blog.cover} alt="" />
 
           <div className="post-content">
             {blog.content.map((block, i) =>
@@ -86,6 +88,27 @@ function BlogPost({ slug }) {
             )}
           </div>
 
+          <div className="project-files">
+            <h2>Project Files</h2>
+            {blog.files.map((file) => (
+              <div className="project-file" key={file.href}>
+                <span>{file.label}</span>
+                <div className="project-file-buttons">
+                  <a href={file.href} target="_blank" rel="noreferrer" className="btn-fill">
+                    View
+                  </a>
+                  <a href={file.href} download className="btn-outline">
+                    Download
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {showPdf && (
+            <iframe className="pdf-preview" src={firstFile.href} title={firstFile.label}></iframe>
+          )}
+
           <div className="post-tags">
             {blog.tags.map((tag) => (
               <span className="pill" key={tag}>
@@ -95,18 +118,12 @@ function BlogPost({ slug }) {
           </div>
 
           <MetaBar blog={blog} />
-
-          <div className="blogs-subscribe post-subscribe">
-            <a href={subscribeLink} target="_blank" rel="noreferrer" className="btn-outline">
-              Subscribe My Blogs
-            </a>
-          </div>
         </div>
       </section>
 
       <section className="blogs also-like">
         <div className="container">
-          <h2 className="also-like-title">You Might Also Like</h2>
+          <h2 className="also-like-title">More Projects</h2>
           <div className="blog-list">
             {others.map((b) => (
               <BlogCard key={b.slug} blog={b} />

@@ -2,7 +2,7 @@ import './Blogs.css'
 import { useState } from 'react'
 import SectionHeader from './SectionHeader'
 import BlogCard from './BlogCard'
-import { blogs, subscribeLink } from '../blogs'
+import { blogs } from '../blogs'
 
 function Blogs() {
   const [showAll, setShowAll] = useState(false)
@@ -13,7 +13,7 @@ function Blogs() {
       <div className="container">
         <SectionHeader
           title="Blogs"
-          subtitle="My thoughts on technology and web development, welcome to subscribe"
+          subtitle="My projects, research papers and thesis proposal. Open any one to read about it or view the files."
         />
 
         <div className="blog-list">
@@ -22,15 +22,16 @@ function Blogs() {
           ))}
         </div>
 
+        <div className="blog-progress">
+          <span style={{ width: (visible.length / blogs.length) * 100 + '%' }}></span>
+        </div>
+
         <div className="blogs-actions">
           {blogs.length > 1 && (
             <button className="btn-fill" onClick={() => setShowAll(!showAll)}>
               {showAll ? 'View Less' : 'View More'}
             </button>
           )}
-          <a href={subscribeLink} target="_blank" rel="noreferrer" className="btn-outline">
-            Subscribe
-          </a>
         </div>
       </div>
     </section>
